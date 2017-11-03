@@ -78,11 +78,7 @@ read -p "Do yout want to edit the software sources ? (n or Enter: " TMP
 	if [ "$TMP" == y ]
 	then
 		sed -i "s/^\b/#/g" /etc/pacman.d/mirrorlist
-		TMP = y
-		read -p "Edit the mirrorlist ? (n or Enter: " TMP
-		if [ "$TMP" == y ]
-		then nano /etc/pacman.d/mirrorlist
-		fi
+		nano /etc/pacman.d/mirrorlist
 	fi
 read -p "Edit /etc/pacman.conf ? (y or Enter: " TMP
 if [ "$TMP" == y ]
