@@ -47,7 +47,7 @@ if [ "$HOME" == y ]
 then
 	fdisk -l
 	read -p "Input the /home mount point: " HOME
-	read -p "Format if > (y or Enter: " TMP
+	read -p "Format it ? (y or Enter: " TMP
 	if [ "$TMP" == y ]
 	then
 		read -p "Input y to use ext4 , default to use btrfs: " TMP
@@ -77,8 +77,7 @@ TMP = y
 read -p "Do yout want to edit the software sources ? (n or Enter: " TMP
 	if [ "$TMP" == y ]
 	then
-		sed -i "s/^\b/#/g" /etc/pacman.d/mirrorlist
-		nano /etc/pacman.d/mirrorlist
+		sed -i "s/^\b/#/g" /etc/pacman.d/mirrorlist && nano /etc/pacman.d/mirrorlist
 	fi
 read -p "Edit /etc/pacman.conf ? (y or Enter: " TMP
 if [ "$TMP" == y ]
