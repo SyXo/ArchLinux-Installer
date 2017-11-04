@@ -17,14 +17,14 @@ passwd
 read -p "Do you use efi to boot ? (y or Enter: " TMP
 if [ "$TMP" == y ]
 then
-	TMP = n
+	TMP=n
 	while [ "$TMP" == n ]
 	do
 		pacman -S --noconfirm grub efibootmgr os-prober&& grub-install --target=x86_64-efi --efi-directory=/boot -- bootloader-id=ArchLinux && grub-mkconfig -o /boot/grub/grub.cfg
 	read -p "Successfully installed ? (n or Enter: " TMP
 	done
 else
-	TMP = n
+	TMP=n
 	while [ "$TMP" == n ]
 	do
 		pacman -S --noconfirm grub os-prober&& fdisk -l
@@ -38,7 +38,7 @@ fi
 TMP = n
 while [ "$TMP" == n ]
 do
-	VIDEO = 5
+	VIDEO=5
 	while [ $VIDEO != 1 && $VIDEO != 2 && $VIDEO != 3 && $VIDEO != 4 ]
 	do
 		echo "What is your video card ?
@@ -77,7 +77,7 @@ do
 		then
 			pacman -S --noconfirm bumblebee xf86-video-intel -y
 			systemctl enable bumblebeed
-			VERSION = 4
+			VERSION=4
 			while [ $VERSION != 1 && VERSION != 2 && VERSION != 3 ]
 			do
 				echo " Version of nvidia-driver to install:
@@ -111,7 +111,7 @@ done
 echo "
 [archlinuxcn]
 Server = http://mirrors.ustc.edu.cn/archlinuxcn/\$arch" >> /etc/pacman.conf
-TMP = n
+TMP=n
 while [ "$TMP" == n ]
 do
 	pacman -Syu && pacman -S --noconfirm archlinuxcn-keyring && pacman -S --noconfirm networkmanager dialog wpa_supplicant netctl wireless_tools xorg-server yaourt wqy-zenhei sudo firefox firefox-i18n-zh-cn fcitx-sogoupinyin
@@ -124,7 +124,7 @@ do
 	read -p "Successful installed ? (n or Enter: " TMP
 done
 ## 安装桌面环境
-TMP = n
+TMP=n
 while [ "$TMP" == n ]
 do
 	echo -e "\033[31m Whick desktop do you want to install: \033[0m"
