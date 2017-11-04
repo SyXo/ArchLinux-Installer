@@ -73,8 +73,7 @@ then fdisk -l
 fi
 ## 软件源
 ## sed -i '/Score/{/China/!{n;s/^/#/}}' /etc/pacman.d/mirrorlist 选择中国的源
-TMP = y
-read -p "Do you want to edit the software sources ? (n or Enter: " TMP
+read -p "Do you want to edit the software sources ? (y or Enter: " TMP
 	if [ "$TMP" == y ]
 	then
 		sed -i "s/^\b/#/g" /etc/pacman.d/mirrorlist
