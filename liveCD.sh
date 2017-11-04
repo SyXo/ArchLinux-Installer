@@ -42,7 +42,7 @@ then
 	mount $BOOT /mnt/boot
 fi
 ## /home
-read -p "Do you have the /home partition ? (y or Enter: " HOME
+read -p "Do you have the /home mount point ? (y or Enter: " HOME
 if [ "$HOME" == y ]
 then
 	fdisk -l
@@ -55,8 +55,9 @@ then
 		then
 			mkfs.ext4 $HOME --force
 		else
-			mkfs.btrfs $HOMR -f
+			mkfs.btrfs $HOME -f
 		fi
+		
 	fi
 fi
 ## swap
