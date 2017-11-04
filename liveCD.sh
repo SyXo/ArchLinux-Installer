@@ -85,7 +85,7 @@ then
 	nano /etc/pacman.conf
 fi
 ## 安装基本系统
-TMP = n
+TMP=n
 while [ "$TMP" == n ]
 do
 	pacstrap /mnt base base-devel --force
