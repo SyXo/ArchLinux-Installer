@@ -127,6 +127,7 @@ then
 	nano /etc/pacman.conf
 fi
 ## 安装基本系统
+pacman -Syy
 TMP=n
 while [ "$TMP" == n ]
 do
